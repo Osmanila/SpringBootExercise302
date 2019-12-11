@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+<!--    <style>-->
+<!--        table, th, td {-->
+<!--            border: 1px solid black;-->
+<!--            border-collapse: collapse;-->
+
+<!--        }-->
+<!--        th, td {-->
+<!--            width:30px;-->
+<!--            text-align: left;-->
+<!--        }-->
+<!--    </style>-->
+    <title>Title</title>
+</head>
+<body>
+<h1>Todo List Form</h1>
+<a href="/add"> add a Todo</a><br />
+
+<table style="border: 1px solid black;" >
+
+    <tr>
+        <th>Task name</th>
+        <th>Due Date</th>
+        <th>Priority</th>
+    </tr>
+    <tr th:each="todo :${todos}">
+        <td th:text="${todo.taskName}">
+        <td th:text="${todo.dueDate}">
+        <td th:text="${todo.priority}">
+    </tr>
+
+</table>
+
+
+<!--<div th:each="todo :${todos}">-->
+<!--    <table style="width:100%">-->
+<!--    <tr>-->
+<!--        <td th:text="${todo.taskName}">-->
+<!--       <td th:text="${todo.dueDate}">-->
+<!--       <td th:text="${todo.priority}">-->
+<!--    </tr>-->
+<!--    </table>-->
+<!--</div>-->
+</body>
+</html>
